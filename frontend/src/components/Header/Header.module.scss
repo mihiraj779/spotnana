@@ -1,0 +1,65 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 28px;
+  background: linear-gradient(180deg, var(--spotnana-red) 0%, var(--spotnana-red-dark) 100%);
+  min-height: 64px;
+  line-height: 1;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.logo {
+  height: 40px;
+  width: 40px;
+  object-fit: contain;
+  background: #fff;
+  border-radius: var(--radius);
+  padding: 6px;
+  box-shadow: var(--shadow-sm);
+}
+
+.companyName {
+  color: #fff !important;
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.center {
+  flex: 1;
+  margin: 0 28px;
+  .breadcrumb {
+    :global(.ant-breadcrumb-link) {
+      color: rgba(255, 255, 255, 0.92);
+      font-size: 14px;
+      transition: color 0.2s;
+      &:hover {
+        color: #fff;
+      }
+    }
+    :global(.ant-breadcrumb-separator) {
+      color: rgba(255, 255, 255, 0.6);
+    }
+  }
+}
+
+.right {
+  .avatar {
+    background: rgba(255, 255, 255, 0.95);
+    color: var(--spotnana-red);
+    font-weight: 600;
+  }
+  .profileName {
+    color: #fff !important;
+    font-size: 14px;
+    font-weight: 500;
+  }
+}
