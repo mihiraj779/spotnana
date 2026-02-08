@@ -1,0 +1,27 @@
+#  * Project: SkyPath Flight Connection Search
+#  * Description: SkyPath Backend Service
+#  * Responsibility: SkyPath Flight Connection Search
+#  * Run from spotnana/backend: docker compose up --build
+
+version: "1"
+services:
+  skypath-backend-container:
+    build:
+      context: ..
+      dockerfile: backend/Dockerfile
+    command:
+      - "uvicorn"
+      - "skypath_backend.app:app"
+      - "--host"
+      - "0.0.0.0"
+      - "--port"
+      - "9090"
+      - "--reload"
+    volumes:
+      - ./skypath_backend:/app/skypath_backend
+    environment:
+      SERVICE_NAME: "skypath"
+      LOG_LEVEL: "DEBUG"
+      LOG_PATH: "."
+    ports:
+      - "9090:9090"
