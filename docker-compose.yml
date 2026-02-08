@@ -1,0 +1,26 @@
+# SkyPath - Backend + Frontend
+# Run from spotnana/: docker compose up --build
+
+services:
+  skypath-backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    ports:
+      - "9090:9090"
+    environment:
+      SERVICE_NAME: "skypath"
+      LOG_LEVEL: "DEBUG"
+    volumes:
+      - ./backend/skypath_backend:/app/skypath_backend
+
+  skypath-frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3030:3030"
+    environment:
+      VITE_PROXY_TARGET: "http://skypath-backend:9090"
+    depends_on:
+      - skypath-backend
