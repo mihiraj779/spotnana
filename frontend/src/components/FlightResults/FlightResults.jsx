@@ -26,13 +26,15 @@ const FlightResults = ({
 
   if (error) {
     return (
-      <Alert
-        type="error"
-        showIcon
-        message="Search failed"
-        description={error}
-        className={styles.alert}
-      />
+      <div className={styles.errorWrapper}>
+        <Alert
+          type="error"
+          showIcon
+          message="Search failed"
+          description={error}
+          className={styles.alert}
+        />
+      </div>
     );
   }
 

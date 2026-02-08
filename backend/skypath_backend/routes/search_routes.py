@@ -62,7 +62,7 @@ def search(
     if origin == destination:
         return JSONResponse(
             status_code=400,
-            content={"detail": "origin and destination must be different"},
+            content={"detail": "Origin and destination must be different"},
         )
 
     state = _get_state(request)

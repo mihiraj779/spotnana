@@ -1,11 +1,14 @@
 .form {
-  padding: 20px 24px 16px;
+  padding: 24px 24px 20px;
   border-bottom: 1px solid var(--border-light);
   background: var(--bg-card);
 
   :global(.ant-form-item-label > label) {
     font-weight: 500;
     color: var(--text-primary);
+  }
+  :global(.ant-form-item-required::before) {
+    margin-inline-end: 4px;
   }
   :global(.ant-input),
   :global(.ant-select-selector),
@@ -16,13 +19,14 @@
     border-radius: 6px;
     font-weight: 500;
     height: 40px;
+    min-width: 100px;
   }
 }
 
 .sectionTitle {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 600;
   color: var(--text-primary);
-  margin: 0 0 14px 0;
-  letter-spacing: -0.01em;
+  margin: 0 0 18px 0;
+  letter-spacing: -0.02em;
 }

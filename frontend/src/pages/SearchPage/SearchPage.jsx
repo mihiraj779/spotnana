@@ -30,13 +30,6 @@ const SearchPage = () => {
   };
 
   const handleSearch = async (params) => {
-    if (params.origin === params.destination) {
-      toast.error("Origin and destination must be different");
-      setError("Origin and destination must be different");
-      setItineraries(null);
-      setTotalCount(null);
-      return;
-    }
     setError(null);
     setItineraries(null);
     setTotalCount(null);
@@ -52,8 +45,7 @@ const SearchPage = () => {
         toast.info("No itineraries found");
       }
     } catch (err) {
-      const message = err.message || "Search failed";
-      setError(message);
+      const message = err?.message || "Search failed";
       toast.error(message);
       setItineraries(null);
       setTotalCount(null);
@@ -68,8 +60,7 @@ const SearchPage = () => {
     runSearch(lastSearchParams, pageNum, pageSize)
       .finally(() => setLoading(false))
       .catch((err) => {
-        setError(err.message || "Search failed");
-        toast.error(err.message);
+        toast.error(err?.message || "Search failed");
       });
   };
 
@@ -80,8 +71,7 @@ const SearchPage = () => {
     runSearch(lastSearchParams, 1, size)
       .finally(() => setLoading(false))
       .catch((err) => {
-        setError(err.message || "Search failed");
-        toast.error(err.message);
+        toast.error(err?.message || "Search failed");
       });
   };
 

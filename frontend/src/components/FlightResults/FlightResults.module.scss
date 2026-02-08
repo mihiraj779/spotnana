@@ -6,9 +6,23 @@
   padding: 2rem;
 }
 
-.alert {
+.errorWrapper {
   margin: 0 24px 16px;
+  padding: 0;
+}
+
+.alert {
   border-radius: var(--radius);
+  border: 1px solid #ff4d4f;
+  background: #fff2f0;
+
+  :global(.ant-alert-message) {
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+  :global(.ant-alert-description) {
+    color: var(--text-secondary);
+  }
 }
 
 .list {
